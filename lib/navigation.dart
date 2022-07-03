@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
-import 'package:finals_dev/home.dart';
-import 'package:finals_dev/product.dart';
-import 'package:finals_dev/contact.dart';
+import 'home.dart';
+import 'product.dart';
+import 'contact.dart';
 
 class NavDrawer extends StatelessWidget {
 
