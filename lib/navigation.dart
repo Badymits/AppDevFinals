@@ -23,16 +23,17 @@ class NavDrawer extends StatelessWidget {
               color: primaryColor,
             ),
             child: Text(
-              'Drawer Header',
+              'KAE\nBetter nutrition for a better life',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.message),
-            title: const Text('First Screen'),
+            leading: const Icon(Icons.home),
+            title: const Text('HOME'),
             onTap: () {
               Navigator.pop(context);
               if(screen != '/'){
@@ -41,8 +42,8 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.account_circle),
-            title: const Text('Second Screen'),
+            leading: const Icon(Icons.production_quantity_limits_rounded),
+            title: const Text('PRODUCTS'),
             onTap: () {
               Navigator.pop(context);
               if(screen != '/second') {
@@ -51,8 +52,8 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('Third Screen'),
+            leading: const Icon(Icons.phone),
+            title: const Text('CONTACT US'),
             onTap: () {
               Navigator.pop(context);
               if(screen != '/third') {
