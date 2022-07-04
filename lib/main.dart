@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'contact.dart';
 import 'product.dart';
 import 'home.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp();
   runApp(
     MaterialApp(
       title: 'Named Routes Demo',
