@@ -7,7 +7,15 @@ import 'home.dart';
 const primaryColor = Color(0xFF03B4C6);
 
 Future<void> main() async {
-  await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: "XXX",
+      appId: "XXX",
+      messagingSenderId: "XXX",
+      projectId: "XXX",
+    ),
+  );
   runApp(
     MaterialApp(
       title: 'Named Routes Demo',
