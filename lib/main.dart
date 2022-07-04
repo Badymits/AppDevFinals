@@ -6,7 +6,6 @@ import 'home.dart';
 
 const primaryColor = Color(0xFF03B4C6);
 
-void main() {
 Future<void> main() async {
   await Firebase.initializeApp();
   runApp(
