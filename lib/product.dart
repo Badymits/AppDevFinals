@@ -46,7 +46,7 @@ class product extends StatelessWidget {
               width:400,
               alignment: Alignment.center,
               child: const Text(
-                  'KAE is the health consumer app that ultimately strives to give the best and trusted suplemments there is. We Intend to support and aid in mainting your health! We Choose our supplements very seriusly. Heres whats in store for you all..',
+                  'KAE is the health consumer app that ultimately strives to give the best and trusted supplements there is. We Intend to support and aid in maintaining your health! We Choose our supplements very seriously. Here are the products we have for you!',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16,)
               ),
