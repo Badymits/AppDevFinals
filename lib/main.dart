@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'contact.dart';
 import 'product.dart';
 import 'home.dart';
 
 const primaryColor = Color(0xFF03B4C6);
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: FirebaseOptions(
-      apiKey: "XXX",
-      appId: "XXX",
-      messagingSenderId: "XXX",
-      projectId: "XXX",
-    ),
-  );
+void main(){
   runApp(
     MaterialApp(
       title: 'Named Routes Demo',
