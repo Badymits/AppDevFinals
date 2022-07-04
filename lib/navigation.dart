@@ -4,6 +4,8 @@ import 'home.dart';
 import 'product.dart';
 import 'contact.dart';
 
+const primaryColor = Color(0xFFC0CAED);
+
 class NavDrawer extends StatelessWidget {
 
   String screen;
@@ -18,7 +20,7 @@ class NavDrawer extends StatelessWidget {
         children: <Widget>[
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: primaryColor,
             ),
             child: Text(
               'Drawer Header',
