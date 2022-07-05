@@ -33,7 +33,6 @@ class home extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-
               Container(
                 margin: const EdgeInsets.only(top: 70),
                 child: RichText(
@@ -49,103 +48,98 @@ class home extends StatelessWidget {
                     ],
                   ),
                   textAlign: TextAlign.center,
-
                 ),
-
               ),
               const SizedBox(height: 50),
-              Container(
-                  child: RichText(
-                    text: const TextSpan(
-                      children: [
-                        WidgetSpan(
-                          child: Icon(Icons.check, size: 20, color: textColor),
+              Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                            child: RichText(
+                              text: const TextSpan(
+                                children: [
+                                  WidgetSpan(
+                                    child: Icon(Icons.check, size: 20, color: textColor),
+                                  ),
+                                  TextSpan(
+                                      text: " Transparent pricing with no hidden fees",
+                                      style: TextStyle(fontSize: 20)
+                                  )
+                                ],
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                         ),
-                        TextSpan(
-                          text: " Transparent pricing with no hidden fees",
-                          style: TextStyle(fontSize: 20)
-                        )
+                        const SizedBox(height: 50),
+                        Container(
+                            alignment: FractionalOffset.center,
+                            child: RichText(
+                              text: const TextSpan(
+                                children: [
+                                  WidgetSpan(
+                                    child: Icon(Icons.check, size: 20, color: textColor),
+                                  ),
+                                  TextSpan(
+                                      text:  "  Cancel your subscription anytime",
+                                      style: TextStyle(fontSize: 20)
+                                  ),
+                                ],
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                        ),
+                        const SizedBox(height: 50),
+                        Container(
+                            alignment: FractionalOffset.center,
+                            child: RichText(
+                              text: const TextSpan(
+                                children: [
+                                  WidgetSpan(
+                                    child: Icon(Icons.check, size: 20, color: textColor),
+                                  ),
+                                  TextSpan(
+                                      text:  "  Provides weekly, or monthly deliveries",
+                                      style: TextStyle(fontSize: 20)
+                                  )
+                                ],
+                              ),
+                              textAlign: TextAlign.center,
+                            )
+                        ),
+                        const SizedBox(height: 50),
+                        Container(
+                            alignment: FractionalOffset.center,
+                            child: RichText(
+                              text: const TextSpan(
+                                children: [
+                                  WidgetSpan(
+                                    child: Icon(Icons.check, size: 20, color: textColor),
+                                  ),
+                                  TextSpan(
+                                      text:  "  Schedule and pay online with ease",
+                                      style: TextStyle(fontSize: 20)
+                                  )
+                                ],
+                              ),
+                              textAlign: TextAlign.center,
+                            )
+                        ),
+                        const SizedBox(height: 50),
+                        Container(
+                          padding: EdgeInsets.all(15),
+                          height: 400.0,
+                          alignment: Alignment.center,
+                          child: const Image(image: AssetImage('assets/sub_service.jpg')),
+                        ),
                       ],
                     ),
-                    textAlign: TextAlign.center,
                   )
-              ),
-              const SizedBox(height: 50),
-              Container(
-                alignment: FractionalOffset.center,
-                  child: RichText(
-                    text: const TextSpan(
-                      children: [
-                        WidgetSpan(
-                          child: Icon(Icons.check, size: 20, color: textColor),
-                        ),
-                        TextSpan(
-                            text:  "  Cancel your subscription anytime",
-                            style: TextStyle(fontSize: 20)
-                        )
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  )
-              ),
-              const SizedBox(height: 50),
-              Container(
-                  alignment: FractionalOffset.center,
-                  child: RichText(
-                    text: const TextSpan(
-                      children: [
-                        WidgetSpan(
-                          child: Icon(Icons.check, size: 20, color: textColor),
-                        ),
-                        TextSpan(
-                            text:  "  Provides weekly, or monthly deliveries",
-                            style: TextStyle(fontSize: 20)
-                        )
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  )
-              ),
-              const SizedBox(height: 50),
-              Container(
-                  alignment: FractionalOffset.center,
-                  child: RichText(
-                    text: const TextSpan(
-                      children: [
-                        WidgetSpan(
-                          child: Icon(Icons.check, size: 20, color: textColor),
-                        ),
-                        TextSpan(
-                            text:  "  Schedule and pay online with ease",
-                            style: TextStyle(fontSize: 20)
-                        )
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  )
-              ),
-              const SizedBox(height: 50),
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xff7c94b6),
-                  image: const DecorationImage(
-                    image: NetworkImage(
-                        'https://assets.unilab.com.ph/uploads/Common/Products/Alnix%20Plus%20Syrup-485/Alnix%20Plus%20Syrup-816.jpg'
-                    ),
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  border: Border.all(
-                    color: Color(0xFFe0e0e0),
-                    width: 4.0,
-                  ),
-                )
-              ),
+              )
             ],
           )
-
       ),
       drawer: NavDrawer(screen: '/'),
     );
   }
-
 }
