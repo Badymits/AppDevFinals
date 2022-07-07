@@ -8,7 +8,7 @@ const primaryColor = Color(0xFF03B4C6);
 void main(){
   runApp(
     MaterialApp(
-      title: 'Named Routes Demo',
+      title: 'KAE Consumer App',
 
       // Start the app with the "/" named route. In this case, the app starts
       // on the FirstScreen widget.
