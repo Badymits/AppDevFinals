@@ -39,7 +39,7 @@ class contact extends StatelessWidget {
             Container(
               alignment: Alignment.center,
               child: const Text(
-                  'We Did Love To Hear From You',
+                  'We Would Love To Hear From You',
                   style: TextStyle(
                     fontSize: 30,
                   )),
