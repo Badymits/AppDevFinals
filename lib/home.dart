@@ -13,6 +13,7 @@ class home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Column(
+
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
@@ -33,61 +34,62 @@ class home extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Container(
-                margin: const EdgeInsets.only(top: 70),
-                child: RichText(
-                  text: const TextSpan(
-                    children: [
-                      WidgetSpan(
-                        child: Icon(Icons.check, size: 20, color: textColor),
-                      ),
-                      TextSpan(
-                        text: " Supplements are registered by the FDA",
-                        style: TextStyle(fontSize: 20)
-                      ),
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              const SizedBox(height: 50),
               Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
                         Container(
-                            child: RichText(
-                              text: const TextSpan(
-                                children: [
-                                  WidgetSpan(
+                          margin: const EdgeInsets.only(top: 70),
+                          child: RichText(
+                            text: const TextSpan(
+                              children: [
+                                WidgetSpan(
                                     child: Icon(Icons.check, size: 20, color: textColor),
-                                  ),
-                                  TextSpan(
-                                      text: " Transparent pricing with no hidden fees",
-                                      style: TextStyle(fontSize: 20)
-                                  )
-                                ],
-                              ),
-                              textAlign: TextAlign.center,
+                                ),
+                                TextSpan(
+                                  text: " Supplements are registered by the FDA",
+                                  style: TextStyle(fontSize: 20, color: Colors.black)
+                                ),
+                              ],
                             ),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                         const SizedBox(height: 50),
                         Container(
-                            alignment: FractionalOffset.center,
-                            child: RichText(
-                              text: const TextSpan(
-                                children: [
-                                  WidgetSpan(
-                                    child: Icon(Icons.check, size: 20, color: textColor),
-                                  ),
-                                  TextSpan(
-                                      text:  "  Cancel your subscription anytime",
-                                      style: TextStyle(fontSize: 20)
-                                  ),
-                                ],
-                              ),
-                              textAlign: TextAlign.center,
+                          alignment: FractionalOffset.center,
+                          child: RichText(
+                            text: const TextSpan(
+                              children: [
+                                WidgetSpan(
+                                  child: Icon(Icons.check, size: 20, color: textColor),
+                                ),
+                                TextSpan(
+                                    text:  "  Transparent pricing with no hidden fees",
+                                    style: TextStyle(fontSize: 20, color: Colors.black)
+                                ),
+                              ],
                             ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const SizedBox(height: 50),
+                        Container(
+                          alignment: FractionalOffset.center,
+                          child: RichText(
+                            text: const TextSpan(
+                              children: [
+                                WidgetSpan(
+                                  child: Icon(Icons.check, size: 20, color: textColor),
+                                ),
+                                TextSpan(
+                                    text:  "  Cancel your subscription anytime",
+                                    style: TextStyle(fontSize: 20, color: Colors.black)
+                                ),
+                              ],
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                         const SizedBox(height: 50),
                         Container(
@@ -100,7 +102,7 @@ class home extends StatelessWidget {
                                   ),
                                   TextSpan(
                                       text:  "  Provides weekly, or monthly deliveries",
-                                      style: TextStyle(fontSize: 20)
+                                      style: TextStyle(fontSize: 20, color: Colors.black)
                                   )
                                 ],
                               ),
@@ -118,7 +120,7 @@ class home extends StatelessWidget {
                                   ),
                                   TextSpan(
                                       text:  "  Schedule and pay online with ease",
-                                      style: TextStyle(fontSize: 20)
+                                      style: TextStyle(fontSize: 20, color: Colors.black)
                                   )
                                 ],
                               ),
@@ -134,7 +136,10 @@ class home extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
+              ),
+              Container(
+                
               )
             ],
           )
