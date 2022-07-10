@@ -37,7 +37,7 @@ class NavDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               if(screen != '/'){
-                Navigator.pushNamed(context, '/first');
+                Navigator.pushNamed(context, '/');
               }
             },
           ),

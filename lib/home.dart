@@ -178,58 +178,66 @@ class home extends StatelessWidget {
                             ],
                           ),
                         ),
-                      Container(
-                        margin: EdgeInsets.only(top:20),
-                        child: Column(
-                          children: const [
-                            Padding(
-                              padding: EdgeInsets.only(top:5), //apply padding to all four sides
-                              child: Text(
-                                "KAE",
-                                style: TextStyle(color: textColor, fontSize: 20.0,),
-                              ),
-                            ),
-                            Text(
-                              "Better Nutrition for a better life",
-                              style: TextStyle(color: textColor, fontSize: 18.0,),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top:20), //apply padding to all four sides
-                              child: Text(
-                                "Get some updates from us in your inbox.",
-                                style: TextStyle(color: textColor, fontSize: 15.0,),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top:0, bottom:15,), //apply padding to all four sides
-                              child: Text(
-                                "Be the first to learn about our new products!",
-                                style: TextStyle(color: textColor, fontSize: 15.0,),
-                              ),
-                            ),
-                            SizedBox( // <-- SEE HERE
-                              width: 400,
-                              height:35,
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                                  filled: true,
-                                  fillColor: Color(0xFFFFFFFF),
-                                  labelText: 'Enter Email',
-                                  border: OutlineInputBorder(),
+                        Container(
+                          margin: EdgeInsets.only(top:20),
+                          width: 500,
+                          height: 240,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFC0CAED),
+                          ),
+                          child: Container(
+                            margin: EdgeInsets.only(top:20),
+                            child: Column(
+                              children: const [
+                                Padding(
+                                  padding: EdgeInsets.only(top:5), //apply padding to all four sides
+                                  child: Text(
+                                    "KAE",
+                                    style: TextStyle(color: textColor, fontSize: 20.0,),
+                                  ),
                                 ),
-                              ),
+                                Text(
+                                  "Better Nutrition for a better life",
+                                  style: TextStyle(color: textColor, fontSize: 18.0,),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top:20), //apply padding to all four sides
+                                  child: Text(
+                                    "Get some updates from us in your inbox.",
+                                    style: TextStyle(color: textColor, fontSize: 15.0,),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top:0, bottom:15,), //apply padding to all four sides
+                                  child: Text(
+                                    "Be the first to learn about our new products!",
+                                    style: TextStyle(color: textColor, fontSize: 15.0,),
+                                  ),
+                                ),
+                                SizedBox( // <-- SEE HERE
+                                  width: 400,
+                                  height:35,
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                                      filled: true,
+                                      fillColor: Color(0xFFFFFFFF),
+                                      labelText: 'Enter Email',
+                                      border: OutlineInputBorder(),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top:24,), //apply padding to all four sides
+                                  child: Text(
+                                    " Copyright © KAE Wellness App 2022",
+                                    style: TextStyle(color: textColor, fontSize: 12.0,),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(top:24,), //apply padding to all four sides
-                              child: Text(
-                                " Copyright © KAE Wellness App 2022",
-                                style: TextStyle(color: textColor, fontSize: 12.0,),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
                       ],
                     ),
                   ),
