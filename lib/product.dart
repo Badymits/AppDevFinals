@@ -396,7 +396,7 @@ class product extends StatelessWidget {
            ],
         ),
       ),
-      drawer: NavDrawer(screen: '/'),
+      drawer: NavDrawer(screen: '/second'),
     );
 
   }

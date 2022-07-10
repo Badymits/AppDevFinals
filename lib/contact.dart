@@ -107,7 +107,7 @@ class contact extends StatelessWidget {
           ],
         ),
       ),
-      drawer: NavDrawer(screen: '/'),
+      drawer: NavDrawer(screen: '/third'),
     );
 
   }

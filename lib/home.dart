@@ -5,8 +5,8 @@ const primaryColor = Color(0xFFC0CAED);
 
 const textColor = Color(0xFF091747);
 
-class home extends StatelessWidget {
-  const home({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
