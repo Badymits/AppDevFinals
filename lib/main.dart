@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'contact.dart';
 import 'product.dart';
 import 'home.dart';
+import 'database.dart';
 
 const primaryColor = Color(0xFF03B4C6);
 
-void main(){
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: "XXX", // Your apiKey
+      appId: "XXX", // Your appId
+      messagingSenderId: "XXX", // Your messagingSenderId
+      projectId: "XXX", // Your projectId
+    ),
+  );
   runApp(
     MaterialApp(
       title: 'KAE Consumer App',
@@ -19,6 +30,7 @@ void main(){
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const product(),
         '/third': (context) => const contact(),
+        '/fourth': (context) => RegistrationScreen(),
       },
       theme: ThemeData(
         primaryColor: primaryColor,
