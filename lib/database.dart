@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:rounded_button/rounded_button.dart';
-import 'rounded_button.dart';
 import 'navigation.dart';
 
 

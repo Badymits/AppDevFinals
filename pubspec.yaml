@@ -39,6 +39,7 @@ dependencies:
   cloud_firestore: ^3.2.1
   modal_progress_hud: ^0.1.3
   rounded_button: ^1.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
