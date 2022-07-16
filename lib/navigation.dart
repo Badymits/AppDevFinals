@@ -63,7 +63,7 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.phone),
-            title: const Text('LOGOUT'),
+            title:  const Text('LOGOUT'),
             onTap: () {
               Navigator.pop(context);
               if(screen != '/fourth') {

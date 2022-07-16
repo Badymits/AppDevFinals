@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,6 +7,13 @@ import 'home.dart';
 import 'navigation.dart';
 
 class LogIn extends StatefulWidget{
+  final VoidCallback onClickedSignup;
+
+  const LogIn ({
+    Key? key,
+    required this.onClickedSignup,
+  }) : super(key: key);
+
   @override
   _LogInState createState() => _LogInState();
 }
@@ -57,13 +65,26 @@ class _LogInState extends State<LogIn> {
                         ),
                         onPressed: signIn,
                       ),
-                      const Padding(
+                        Padding(
                           padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                            "Don't have an account yet? Register now!",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                      )
+                          child: RichText(
+                            text: TextSpan(
+                              style: TextStyle(color: Colors.black),
+                              text: 'Dont have an account yet?',
+                              children: [
+                                TextSpan(
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = widget.onClickedSignup,
+                                  text: '\nRegister now!',
+                                  style: const TextStyle(
+                                    fontSize: 24,
+                                    decoration: TextDecoration.underline,
+                                  )
+                                ),
+                              ]
+                            ),
+                          )
+                      ),
                     ],
                   ),
                 ),
