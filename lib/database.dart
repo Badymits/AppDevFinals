@@ -57,6 +57,13 @@ class _LogInState extends State<LogIn> {
                         ),
                         onPressed: signIn,
                       ),
+                      const Padding(
+                          padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                            "Don't have an account yet? Register now!",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      )
                     ],
                   ),
                 ),

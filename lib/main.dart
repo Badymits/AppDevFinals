@@ -32,7 +32,7 @@ void main() async {
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const product(),
         '/third': (context) => const contact(),
-        // '/fourth': (context) => LogIn(),
+        '/fourth': (context) => LogIn(),
       },
       theme: ThemeData(
         primaryColor: primaryColor,
@@ -53,13 +53,7 @@ class MainPage extends StatelessWidget{
   body: StreamBuilder<User?>(
   stream: FirebaseAuth.instance.authStateChanges(),
   builder: (context, snapshot) {
-    if (snapshot.connectionState == ConnectionState.waiting) {
-  return Center(child:CircularProgressIndicator());
-  }
-    else if (snapshot.hasError){
-  return Center(child: Text('Something went wrong!'));
-  }
-    else if (snapshot.hasData){
+    if (snapshot.hasData){
       return const Home();
     }
     else {

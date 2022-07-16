@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser!;
+    //final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -168,14 +168,21 @@ class Home extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 25),
                           margin: const EdgeInsets.all(20),
                           child: Column(
-                            children: const <Widget>[
-                              Icon(Icons.hide_source, size: 32, color: textColor,
+                            children:  <Widget>[
+                              const Icon(Icons.hide_source, size: 32, color: textColor,
                               ),
-                              Text("Don't worry! What you see is what you'll pay! Whatever the prices are listed here are all you need to pay for!"
+                              const Text("Don't worry! What you see is what you'll pay! Whatever the prices are listed here are all you need to pay for!"
                                   "No need to think about the extra things. We strive to build trust with our customers, transparency is one way to earn it!",
                                 style: TextStyle(fontSize: 20),
                                 textAlign: TextAlign.justify,
-                              )
+                              ),
+                              MaterialButton(
+                                onPressed: () => FirebaseAuth.instance.signOut(),
+                                child: Text(
+                                  "Signout"
+                              ),
+
+                              ),
                             ],
                           ),
                         ),
@@ -186,10 +193,11 @@ class Home extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: Color(0xFFC0CAED),
                           ),
+
                           child: Container(
                             margin: EdgeInsets.only(top:20),
                             child: Column(
-                              children: const [
+                              children:  const [
                                 Padding(
                                   padding: EdgeInsets.only(top:5), //apply padding to all four sides
                                   child: Text(
@@ -228,6 +236,7 @@ class Home extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+
                                 Padding(
                                   padding: EdgeInsets.only(top:24,), //apply padding to all four sides
                                   child: Text(
@@ -235,8 +244,10 @@ class Home extends StatelessWidget {
                                     style: TextStyle(color: textColor, fontSize: 12.0,),
                                   ),
                                 ),
+
                               ],
                             ),
+
                           ),
                         ),
                       ],
