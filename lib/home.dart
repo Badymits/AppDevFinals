@@ -11,6 +11,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -30,7 +31,6 @@ class Home extends StatelessWidget {
         ),
         backgroundColor: primaryColor,
       ),
-
       body: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
