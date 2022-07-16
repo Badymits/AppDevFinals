@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'contact.dart';
@@ -30,7 +31,7 @@ void main() async {
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const product(),
         '/third': (context) => const contact(),
-        '/fourth': (context) => RegistrationScreen(),
+        '/fourth': (context) => LogIn(),
       },
       theme: ThemeData(
         primaryColor: primaryColor,
@@ -46,3 +47,19 @@ class CustomPageRoute extends MaterialPageRoute {
   @override
   Duration get transitionDuration => const Duration(milliseconds: 0);
 }
+class MainPage extends StatelessWidget{
+    @override
+  Widget build(BuildContext context) => Scaffold(
+  body: StreamBuilder<User?>(
+  stream: FirebaseAuth.instance.authStateChanges(),
+  builder: (context, snapshot) {
+    if (snapshot.hasData) {
+  return Home();
+  }
+    else{
+  return LogIn();
+  }
+  }
+  )
+  );
+  }

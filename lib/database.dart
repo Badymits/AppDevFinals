@@ -1,101 +1,69 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:rounded_button/rounded_button.dart';
 import 'navigation.dart';
 
-
-const kTextFieldDecoration = InputDecoration(
-  hintText: 'Enter a value',
-  hintStyle: TextStyle(color: Colors.grey),
-  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-  border: OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-  ),
-  enabledBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.lightBlueAccent, width: 1.0),
-    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-  ),
-  focusedBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-  ),
-);
-
-class RegistrationScreen extends StatefulWidget {
+class LogIn extends StatefulWidget{
   @override
-  _RegistrationScreenState createState() => _RegistrationScreenState();
+  _LogInState createState() => _LogInState();
 }
-
-class _RegistrationScreenState extends State<RegistrationScreen> {
-  final _auth = FirebaseAuth.instance;
-   late String email;
-   late String password;
-  bool showSpinner = false;
+class _LogInState extends State<LogIn> {
+  final emailController  = TextEditingController();
+  final passwordController = TextEditingController();
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: ModalProgressHUD(
-        inAsyncCall: showSpinner,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  textAlign: TextAlign.center,
-                  onChanged: (value) {
-                    email = value;
-                    //Do something with the user input.
-                  },
-                  decoration: kTextFieldDecoration.copyWith(
-                      hintText: 'Enter your email')),
-              SizedBox(
-                height: 8.0,
-              ),
-              TextField(
-                  obscureText: true,
-                  textAlign: TextAlign.center,
-                  onChanged: (value) {
-                    password = value;
-                    //Do something with the user input.
-                  },
-                  decoration: kTextFieldDecoration.copyWith(
-                      hintText: 'Enter your Password')),
-              SizedBox(
-                height: 24.0,
-              ),
-              RoundedButton(
-                textColor: Colors.blueAccent,
-                text: 'Register',
-                onPressed: () async {
-                  setState(() {
-                    showSpinner = true;
-                  });
-                  try {
-                    final newUser = await _auth.createUserWithEmailAndPassword(
-                        email: email, password: password);
-                    if (newUser != null) {
-                      Navigator.pushNamed(context, 'home_screen');
-                    }
-                  } catch (e) {
-                    print(e);
-                  }
-                  setState(() {
-                    showSpinner = false;
-                  });
-                },
-              )
-            ],
-          ),
+  void dispose(){
+    emailController.dispose();
+    passwordController.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => SingleChildScrollView(
+    padding: EdgeInsets.all(16),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(height: 40),
+        TextField(
+          controller: emailController,
+          cursorColor: Colors.white,
+          textInputAction: TextInputAction.next,
+          decoration: InputDecoration(labelText: 'Email'),
         ),
-      ),
+        SizedBox(height: 4),
+        TextField(
+          controller: passwordController,
+          textInputAction: TextInputAction.done,
+          decoration: InputDecoration(labelText: 'Password'),
+          obscureText: true,
+        ),
+        SizedBox(height: 20),
+        ElevatedButton.icon(
+          style: ElevatedButton.styleFrom(
+            minimumSize: Size.fromHeight(50),
+          ),
+          icon: Icon(Icons.lock_open, size: 32),
+          label: Text(
+            'Sign In',
+            style: TextStyle(fontSize: 24),
+          ),
+          onPressed: signIn,
+        )
+      ],
+    )
+  );
+  Future signIn() async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text.trim(),
+      password: passwordController.text.trim(),
     );
   }
+
 }
+
+
+
 
 
