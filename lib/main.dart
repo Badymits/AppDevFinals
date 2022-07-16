@@ -11,6 +11,7 @@ const primaryColor = Color(0xFF03B4C6);
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    name: "finals dev",
     options: FirebaseOptions(
       apiKey: "XXX", // Your apiKey
       appId: "XXX", // Your appId
@@ -31,13 +32,12 @@ void main() async {
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const product(),
         '/third': (context) => const contact(),
-        '/fourth': (context) => LogIn(),
+        // '/fourth': (context) => LogIn(),
       },
       theme: ThemeData(
         primaryColor: primaryColor,
       ),
     ),
-
   );
 }
 
@@ -54,7 +54,7 @@ class MainPage extends StatelessWidget{
   stream: FirebaseAuth.instance.authStateChanges(),
   builder: (context, snapshot) {
     if (snapshot.hasData) {
-  return Home();
+  return const Home();
   }
     else{
   return LogIn();

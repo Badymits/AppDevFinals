@@ -61,6 +61,16 @@ class NavDrawer extends StatelessWidget {
               }
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.phone),
+            title: const Text('Login'),
+            onTap: () {
+              Navigator.pop(context);
+              if(screen != '/fourth') {
+                Navigator.pushNamed(context, '/fourth');
+              }
+            },
+          ),
         ],
       ),
     );
