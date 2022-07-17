@@ -6,6 +6,7 @@ import 'product.dart';
 import 'home.dart';
 import 'database.dart';
 import 'auth.dart';
+import 'form.dart';
 
 const primaryColor = Color(0xFF03B4C6);
 
@@ -34,6 +35,7 @@ void main() async {
         '/second': (context) => const product(),
         '/third': (context) => const contact(),
         '/fourth': (context) => Auth(),
+        '/fifth' : (context) => const Home(),
       },
       theme: ThemeData(
         primaryColor: primaryColor,

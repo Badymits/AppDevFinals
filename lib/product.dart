@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'form.dart';
 import 'navigation.dart';
 
 const primaryColor = Color(0xFFC0CAED);
@@ -235,7 +236,12 @@ class product extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton.icon(   // <-- ElevatedButton
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Forms()),
+                );
+              },
               icon: Icon(
                 Icons.check_box,
                 size: 20.0,
@@ -308,7 +314,12 @@ class product extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton.icon(   // <-- ElevatedButton
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Forms()),
+                );
+              },
               icon: Icon(
                 Icons.check_box,
                 size: 20.0,
@@ -400,5 +411,11 @@ class product extends StatelessWidget {
     );
 
   }
-
+  // class RedirectPage extends StatelessWidget{
+  //   @override
+  //   Widget build(BuildContext context) =>
+  //     Scaffold(
+  //       body: StreamBuilder,
+  //   );
+  // }
 }

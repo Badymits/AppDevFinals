@@ -16,6 +16,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register>{
+  final usernameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
