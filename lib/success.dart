@@ -5,12 +5,11 @@ import 'home.dart';
 class ThankYouPage extends StatefulWidget {
   const ThankYouPage({Key? key}) : super(key: key);
 
-
   @override
   State<ThankYouPage> createState() => _ThankYouPageState();
 }
 
-Color themeColor = const Color(0xFF43D19E);
+Color themeColor = const Color(0xFFC0CAED);
 
 class _ThankYouPageState extends State<ThankYouPage> {
   double screenWidth = 600;
@@ -35,10 +34,7 @@ class _ThankYouPageState extends State<ThankYouPage> {
                 color: themeColor,
                 shape: BoxShape.circle,
               ),
-              child: Image.asset(
-                "assets/card.png",
-                fit: BoxFit.contain,
-              ),
+
             ),
             SizedBox(height: screenHeight * 0.1),
             Text(
