@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "105943650163",
-    "project_id": "finals-dev-db",
-    "storage_bucket": "finals-dev-db.appspot.com"
+    "project_number": "999943190229",
+    "project_id": "finals-96ad4",
+    "storage_bucket": "finals-96ad4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:105943650163:android:53a81847c38a7a4e9a3f06",
+        "mobilesdk_app_id": "1:999943190229:android:10711787eec3d7bdf0145c",
         "android_client_info": {
-          "package_name": "com.example.finals_dev"
+          "package_name": "com.example.finals_dev.KAEMobile"
         }
       },
       "oauth_client": [
         {
-          "client_id": "105943650163-823si4o6040mj1n849eii7r9hc5bj1vp.apps.googleusercontent.com",
+          "client_id": "999943190229-m1q7s807gca20n8h9h33jqls5hh30jnb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDRVf2OzQuMZjcrkyUdIceqv08cwoHqteM"
+          "current_key": "AIzaSyCykJiW1n3oTipMsN5zN3HbQfEeoOdwVeM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "105943650163-823si4o6040mj1n849eii7r9hc5bj1vp.apps.googleusercontent.com",
+              "client_id": "999943190229-m1q7s807gca20n8h9h33jqls5hh30jnb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
