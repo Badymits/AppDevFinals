@@ -93,6 +93,7 @@ class _LogInState extends State<LogIn> {
         )
       ),
     );
+
   }
   Future signIn() async{
     await FirebaseAuth.instance.signInWithEmailAndPassword(
