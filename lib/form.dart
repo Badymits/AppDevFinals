@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import 'navigation.dart';
+import 'package:finals_dev/success.dart';
 
 
 class Forms extends StatefulWidget{
@@ -15,6 +17,12 @@ class Forms extends StatefulWidget{
 
 class FormPageState extends State<Forms> {
   TextEditingController dateinput = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController subController = TextEditingController();
+  var name = '';
+  var address;
+  var date_delivery;
 
   var _dropdownvalue;
 
@@ -75,17 +83,21 @@ class FormPageState extends State<Forms> {
                 isExpanded: true,
                 style: TextStyle(color: Colors.black),
               ),
+
               SizedBox(height: 20),
               Text("Full Name"),
               TextFormField(
+                controller: nameController,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Enter Full Name',
                 ),
               ),
+
               SizedBox(height: 20),
               Text("Address"),
               TextFormField(
+                controller: addressController,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Enter Address',
@@ -120,11 +132,34 @@ class FormPageState extends State<Forms> {
                   }
                 },
               ),
+              ElevatedButton(
+                  onPressed: addData,
+                  child: const Text(
+                    "Submit",
+                  ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+  Future addData() async {
+    CollectionReference user = FirebaseFirestore.instance.collection('users');
+    FirebaseAuth auth = FirebaseAuth.instance;
+    final User users  = auth.currentUser!;
+    final uid = users.uid;
+    user.add({
+      'Subscription': _dropdownvalue,
+      'Name': nameController.text,
+      'Address': addressController.text,
+      'Date of Delivery': dateinput.text,
+      'uid': uid,
+    });
+    Navigator.push(context, 
+      MaterialPageRoute(builder: (context) => const ThankYouPage())
+    );
+  }
+
 }
 

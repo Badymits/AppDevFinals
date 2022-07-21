@@ -54,56 +54,17 @@ class contact extends StatelessWidget {
                   style: TextStyle(fontSize: 16,)
               ),
             ),
-            SizedBox( // <-- SEE HERE
-              width: 400,
-              height:35,
-              child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                  filled: true,
-                  fillColor: Color(0xFFFFFFFF),
-                  labelText: 'Enter Subject',
-                  border: OutlineInputBorder(),
-                ),
-                keyboardType: TextInputType.multiline,
-              ),
-            ),
-            Container(
-              height: 25,
-              width:400,
-              alignment: Alignment.center,
-              child: const Text(
-                  '---------------------------------------------------------------------------------------------',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16,)
-              ),
-            ),
-      SizedBox( // <-- SEE HERE
-        width: 400,
-        height:80,
-        child: TextField(
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-            filled: true,
-            fillColor: Color(0xFFFFFFFF),
-            labelText: 'Enter A Message',
-            border: OutlineInputBorder(),
-          ),
-          keyboardType: TextInputType.multiline,
-          maxLines: null,
-        ),
-      ),
+
             SizedBox(
               height: 12,
             ),
-            ElevatedButton.icon(   // <-- ElevatedButton
-              onPressed: () {},
-              icon: Icon(
-                Icons.send,
-                size: 25.0,
+            Container(
+              child: Text(
+                "Gmail:  jacheservices@gmail.com",
+                style: TextStyle(fontSize: 24),
               ),
-              label: Text('SEND MESSAGE NOW!'),
-            ),
+            )
+
           ],
         ),
       ),

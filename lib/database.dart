@@ -99,8 +99,8 @@ class _LogInState extends State<LogIn> {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: emailController.text.trim(),
       password: passwordController.text.trim(),
-
     );
+
     Navigator.pushNamed(context, '/');
   }
   }
